@@ -25,6 +25,7 @@ namespace PaySlip
 
                 Employee employee = new Employee();
 
+                //get user data
                 string temp = "";
                 Console.WriteLine("Please enter First Name.");
                 employee.FirstName = Console.ReadLine();
@@ -47,15 +48,17 @@ namespace PaySlip
 
                 Console.WriteLine("Please enter Payment Start Date.");
                 employee.PaymentStartDate = Console.ReadLine();
+                ValidateName(employee.PaymentStartDate, " Payment Start Date");
 
                 Console.WriteLine("------------------------------");
 
                 // calulate tax and super amounts
                 employee.CalculateTaxAndSuperAmounts(taxRates);
 
-                Console.WriteLine("first-name, last-name,annual-salary,super-rate(%),payment-start-date");
-                Console.WriteLine($"{employee.FirstName} {employee.LastName}, {employee.GrossIncomeAmount}, {employee.IncomeTaxAmount}, " +
-                     $" {employee.NetIncomeAmount}, {employee.SuperAmount}, {employee.PaymentStartDate} ");
+                //Display reults
+                Console.WriteLine("name, pay-period, gross-income, income-tax, net-income, super-amount");
+                Console.WriteLine($"{employee.FirstName} {employee.LastName}, {employee.PaymentStartDate}, {employee.GrossIncomeAmount}, {employee.IncomeTaxAmount}, " +
+                     $" {employee.NetIncomeAmount}, {employee.SuperAmount} ");
 
                 Console.ReadLine();
             }
@@ -83,7 +86,7 @@ namespace PaySlip
         {
 
 
-            if (name.Trim() =="")
+            if (name.Trim() =="" || name.Trim().Length >= 60)
                 throw new InvalidNameException(fieldName);
 
         }

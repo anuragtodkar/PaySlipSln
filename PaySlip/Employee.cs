@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace PaySlip
 {
-    class Employee
+    public class Employee
     {
         public string FirstName { get; set; }
         public string LastName{ get; set; }
         public int AnnualSalary { get; set; }
-        public decimal SuperRate { get; set; }
+        public int SuperRate { get; set; }
 
         public string PaymentStartDate { get; set; }
         public decimal IncomeTaxAmount { get; set; }
@@ -20,6 +20,31 @@ namespace PaySlip
         public decimal NetIncomeAmount { get; set; }
 
         public decimal SuperAmount { get; set; }
+
+        public Employee()
+        {
+
+        }
+        public Employee(string firstName, string lastName, int annualSalary,int superRate )
+        {
+            FirstName = firstName;
+            LastName = lastName;
+            AnnualSalary = annualSalary;
+            SuperRate = superRate;
+        }
+
+        public Employee(string firstName, string lastName, int annualSalary, int superRate, decimal incomeTaxAmount
+            ,decimal grossIncomeAmount, decimal netIncomeAmount, decimal superAmount)
+        {
+            FirstName = firstName;
+            LastName = lastName;
+            AnnualSalary = annualSalary;
+            SuperRate = superRate;
+            IncomeTaxAmount = incomeTaxAmount;
+            GrossIncomeAmount = grossIncomeAmount;
+            NetIncomeAmount = netIncomeAmount;
+            SuperAmount = superAmount;
+        }
 
 
         public void CalculateTaxAndSuperAmounts(List<TaxRate> taxRates)
@@ -54,7 +79,7 @@ namespace PaySlip
         }
 
         public InvalidNameException(string name)
-            : base(String.Format("{0} cannot be left blank. Please enter correct data. Please close the application and run again.", name))
+            : base(String.Format("Please enter correct data. {0} cannot be left blank. The length of {0} cannot be greater than 60 characters. Please close the application and run again.", name))
         {
 
         }

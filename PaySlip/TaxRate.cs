@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PaySlip
 {
-    class TaxRate
+    public class TaxRate
     {
         public int MinValue { get; set; }
 
