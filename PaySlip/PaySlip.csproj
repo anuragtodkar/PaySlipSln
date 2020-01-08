@@ -50,6 +50,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="bin\Release\PaySlip.exe.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Release\PaySlip.exe" />
+    <Content Include="bin\Release\PaySlip.pdb" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
