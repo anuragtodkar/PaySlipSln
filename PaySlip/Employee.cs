@@ -25,16 +25,17 @@ namespace PaySlip
         {
 
         }
-        public Employee(string firstName, string lastName, int annualSalary,int superRate )
+        public Employee(string firstName, string lastName, int annualSalary,int superRate, string paymentStartDate )
         {
             FirstName = firstName;
             LastName = lastName;
             AnnualSalary = annualSalary;
             SuperRate = superRate;
+            PaymentStartDate = paymentStartDate;
         }
 
         public Employee(string firstName, string lastName, int annualSalary, int superRate, decimal incomeTaxAmount
-            ,decimal grossIncomeAmount, decimal netIncomeAmount, decimal superAmount)
+            ,decimal grossIncomeAmount, decimal netIncomeAmount, decimal superAmount, string paymentStartDate)
         {
             FirstName = firstName;
             LastName = lastName;
@@ -44,6 +45,7 @@ namespace PaySlip
             GrossIncomeAmount = grossIncomeAmount;
             NetIncomeAmount = netIncomeAmount;
             SuperAmount = superAmount;
+            PaymentStartDate = paymentStartDate;
         }
 
 

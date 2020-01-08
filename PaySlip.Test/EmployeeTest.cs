@@ -12,7 +12,7 @@ namespace PaySlip.Test
         public void Test_CalculateTaxAndSuperAmounts()
         {
             //Arrange
-            Employee employeeExpected = new Employee("Andrew", "Smith", 60050, 9,922,5004,4082,450);
+            Employee employeeExpected = new Employee("Andrew", "Smith", 60050, 9,922,5004,4082,450,"01 March - 31 March");
 
             List<TaxRate> taxRates = new List<TaxRate>() {
                                 new TaxRate(0, 18200, 0, 0),
@@ -25,7 +25,7 @@ namespace PaySlip.Test
 
             //Act
 
-            Employee employeeActual = new Employee("Andrew","Smith",60050,9);
+            Employee employeeActual = new Employee("Andrew","Smith",60050,9, "01 March - 31 March");
 
             employeeActual.CalculateTaxAndSuperAmounts(taxRates);
 
